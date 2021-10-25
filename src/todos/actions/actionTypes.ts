@@ -1,0 +1,16 @@
+/**
+ * 功能：动作定义
+ * 作者：安超
+ * 日期：2017/6/29
+ */
+enum ActionTypes {
+    GET_ALL_TODO = 'GET_ALL_TODO',
+    ADD_TODO = 'ADD_TODO',
+    REMOVE_TODO = 'REMOVE_TODO',
+    UPDATE_TODO = 'UPDATE_TODO',
+    CHECKED_ALL_TODO = 'CHECKED_ALL_TODO',
+    SET_VISIBILITY_FILTER = 'SET_VISIBILITY_FILTER',
+    CLEAR_COMPLETED_TODO = 'CLEAR_COMPLETED_TODO'
+}
+
+export default ActionTypes;

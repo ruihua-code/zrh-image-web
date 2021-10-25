@@ -1,0 +1,98 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: fe-web-{productName}
+  namespace: "frontend"
+  annotations:
+    kubernetes.io/ingress.class: eip-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: fe-service-{productName}
+              servicePort: {servicePort}
+      host: fe-web-{productName}.qa.mlamp.cn
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fe-service-{productName}
+  namespace: "frontend"
+  labels:
+    name: fe-service-{productName}
+spec:
+  type: ClusterIP
+  clusterIP: None
+  ports:
+    - port: {servicePort}
+      protocol: TCP
+      targetPort: 28282
+      name: http
+  selector:
+    app: fe-web-{productName}-app
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fe-web-{productName}-app
+  namespace: "frontend"
+  labels:
+    app: fe-web-{productName}-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fe-web-{productName}-app
+  template:
+    metadata:
+      labels:
+        app: fe-web-{productName}-app
+    spec:
+      imagePullSecrets:
+        - name: fe-secret
+      containers:
+        - name: fe-web-{productName}-app
+          image: {resource}/{spaceName}/darwindb-{productName}-web-{version}:release
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: '0.01'
+              memory: 100Mi
+            limits:
+              cpu: '0.02'
+              memory: 200Mi
+          ports:
+            - containerPort: 28282
+          envFrom:
+            - configMapRef:
+                name: "fe-web-{productName}-env"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: fe-web-{productName}-env
+  namespace: "frontend"
+  labels:
+    app: fe-web-{productName}-app
+data:
+  NGINX_CONF: |
+      server {
+        listen 28282;
+        location  /feAPI {
+          proxy_pass  http://fe-org.mlamp.cn;
+          proxy_read_timeout 600;
+        }
+
+        location / {
+          root   /home/web;
+          index  index.html index.htm;
+          try_files $uri $uri/ /index.html;
+        }
+
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+          root   html;
+        }
+      }

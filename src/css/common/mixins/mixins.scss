@@ -1,0 +1,79 @@
+@mixin size($width: 100%, $height: auto) {
+    width: $width;
+    height: $height;
+}
+
+@mixin text-overflow() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+@mixin headerIco($end) {
+    @for $i from 1 through $end {
+        > li:nth-child(#{$i}) {
+            a:hover,
+            a.active {
+                i {
+                    @extend .icons-icon00#{$i}.icon00#{$i}-hover;
+                }
+            }
+        }
+    }
+}
+
+@mixin text-emphasis-variant($parent, $color) {
+    #{$parent} {
+        color: $color;
+    }
+    a#{$parent}:hover,
+    a#{$parent}:focus {
+        color: darken($color, 10%);
+    }
+}
+
+@mixin list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+@mixin fieldset {
+    fieldset {
+        position: relative;
+        border: 1px solid $gray-c6;
+        border-radius: 5px;
+        padding: 10px;
+
+        legend {
+            margin: 0 10px;
+            border-width: 0;
+            width: auto;
+            font-size: 14px;
+        }
+
+        & + fieldset {
+            margin-top: 10px;
+        }
+    }
+}
+
+@mixin loading() {
+    @include size(100vw, 100vh);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: rgba($black, 0.2);
+    cursor: progress;
+    text-align: center;
+    color: $main-color;
+
+    > div {
+        @include size(80px, 80px);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -40px;
+        margin-left: -40px;
+    }
+}

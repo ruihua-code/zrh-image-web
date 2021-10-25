@@ -1,0 +1,120 @@
+.main-todos {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid $border-color-base;
+
+    .toggle-all {
+        position: absolute;
+        top: -55px;
+        left: -7px;
+        transform: rotate(90deg);
+        border: none;
+        background: none;
+        width: 60px;
+        height: 34px;
+        text-align: center;
+        -webkit-appearance: none;
+
+        &::before {
+            padding: 10px 27px;
+            color: $gray-5;
+            font-size: 22px;
+            content: "❯";
+        }
+
+        &:checked::before {
+            color: $gray-5;
+        }
+    }
+
+    .todo-list {
+        :global {
+            .view {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    top: 3px;
+                    left: 0;
+                    z-index: 1;
+                }
+            }
+        }
+
+        li {
+            position: relative;
+            border-bottom: 1px solid $gray-8;
+            font-size: 24px;
+
+            .toggle {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+                margin: auto 0;
+                border: none;
+                width: 40px;
+                height: 40px;
+                text-align: center;
+                -webkit-appearance: none;
+            }
+
+            .normal {
+                display: block;
+                margin-left: 45px;
+                padding: 15px 60px 15px 15px;
+                text-align: left;
+                line-height: 1.2;
+                white-space: pre-line;
+                transition: all 0.4s ease;
+                word-break: break-all;
+            }
+
+            .completed {
+                text-decoration: line-through;
+                color: $gray-5;
+            }
+
+            .destroy {
+                position: absolute;
+                top: 0;
+                right: 10px;
+                bottom: 0;
+                margin: auto 0;
+                margin-bottom: 11px;
+                border: 0;
+                background: none;
+                width: 40px;
+                height: 40px;
+                color: $gray-2;
+                font-size: 30px;
+                transition: color 0.2s ease-out;
+                -webkit-appearance: none;
+
+                &::after {
+                    content: "×";
+                }
+            }
+
+            .edit {
+                position: relative;
+                margin: 0 0 0 43px;
+                outline: none;
+                border: 1px solid $gray-1;
+                box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+                box-sizing: border-box;
+                width: 506px;
+                padding: 13px 17px 12px 17px;
+                line-height: 1.4em;
+                color: inherit;
+                font-size: 24px;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+
+        li:last-child {
+            border-bottom: none;
+        }
+    }
+}

@@ -1,0 +1,32 @@
+.demo-tree-table-classic {
+    height: 100%;
+
+    .tree-table-content {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: flex-start;
+        height: 100%;
+        padding: 24px;
+
+        .opera-btns {
+            display: flex;
+        }
+
+        .tree-table-left {
+            margin-right: $space-lg;
+            background-color: $white;
+            width: 300px;
+            height: 100%;
+        }
+
+        .tree-table-right {
+            flex: 1;
+            height: 100%;
+
+            .tree-table-right-table {
+                height: calc(100% - 56px);
+            }
+        }
+    }
+}

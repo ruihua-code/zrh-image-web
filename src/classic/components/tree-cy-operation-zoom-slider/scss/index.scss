@@ -1,0 +1,66 @@
+.zoom-slider-box {
+    display: flex;
+    float: left;
+    margin-top: 8px;
+    width: 283px;
+
+    .zoom-minus,
+    .zoom-plus {
+        border: 1px solid $main-color;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+
+        .anticon {
+            color: $main-color;
+        }
+    }
+
+    .zoom-slider {
+        border-top: 1px solid $main-color;
+        border-bottom: 1px solid $main-color;
+        width: 154px;
+        height: 30px;
+        padding-top: 8px;
+        text-align: center;
+
+        :global {
+            .ant-slider {
+                margin-top: 0;
+                margin-bottom: 0;
+
+                .ant-slider-track {
+                    background-color: $main-color;
+                }
+
+                .ant-slider-handle {
+                    top: 6px;
+                    border-color: $main-color;
+                    background-color: $main-color;
+                    width: 8px;
+                    height: 8px;
+                    color: $main-color;
+                }
+            }
+
+            .ant-slider-rail {
+                height: 2px;
+
+                // background-color: $border-color;
+            }
+        }
+    }
+
+    .zoom-number {
+        margin-left: $space-xs;
+        border: 1px solid $main-color;
+        width: 60px;
+        height: 30px;
+        text-align: center;
+        line-height: 30px;
+        color: $main-color;
+        font-size: 14px;
+    }
+}

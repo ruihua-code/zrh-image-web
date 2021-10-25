@@ -1,0 +1,12 @@
+.md-step-panel-content {
+    height: 100%;
+
+    .md-step-panel-content-panel {
+        position: relative;
+        margin-top: 12px;
+        background-color: $white;
+        width: 100%;
+        height: calc(100% - 44px);
+        overflow: auto;
+    }
+}

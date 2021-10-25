@@ -1,0 +1,87 @@
+.search-header-box {
+    margin-bottom: 24px;
+
+    .search-container {
+        position: relative;
+        background-color: $bg-color;
+        padding: 24px;
+
+        &.fold {
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .search-header {
+                display: block;
+            }
+
+            .search-content {
+                display: none;
+            }
+        }
+
+        .search-header {
+            display: none;
+            height: 48px;
+            line-height: 48px;
+            font-size: 14px;
+
+            .search-params {
+                color: $stress-color;
+            }
+
+            .span-operation {
+                cursor: pointer;
+                color: $main-color;
+
+                .search-tag-count {
+                    display: inline-block;
+                    margin-left: $space-xs;
+                    border: 1px solid $required-color;
+                    border-radius: 12px;
+                    background-color: $required-color;
+                    width: 24px;
+                    height: 24px;
+                    text-align: center;
+                    line-height: 24px;
+                    color: $white;
+                }
+            }
+        }
+
+        .search-content {
+            display: block;
+
+            .select-box-item {
+                display: inline-block;
+                margin-bottom: $space-md;
+                width: 292px;
+
+                .width-normal {
+                    width: 200px;
+                }
+
+                &.date-box-item {
+                    width: 442px;
+                }
+
+                .ant-form-item {
+                    margin-bottom: 0;
+                }
+            }
+        }
+
+        .search-btn-group {
+            margin-left: 74px;
+
+            .ant-btn:nth-child(2) {
+                margin-left: $space-md;
+            }
+
+            .search-up {
+                cursor: pointer;
+                color: $main-color;
+                font-size: 14px;
+            }
+        }
+    }
+}

@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "jsx": "react",
+        "baseUrl": ".",
+        "lib": ["ES6", "ES7", "ESNext", "DOM", "DOM.Iterable", "ScriptHost"],
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "noImplicitAny": false,
+        "resolveJsonModule": true,
+        "strictNullChecks": false,
+        "types": ["node"],
+        "typeRoots": ["./src/typings", "node_modules/@types"],
+        "paths": {
+            "@/*": ["src/*"],
+            "framework/*": ["src/framework/*"],
+            "framework": ["src/framework/index.tsx"],
+            "conf": ["src/conf/index.ts"],
+            "dialog": ["src/framework/dialog/index.ts"],
+            "loading/*": ["src/framework/loading/*"],
+            "loading": ["src/framework/loading/index.ts"],
+            "plugins/*": ["src/plugins/*"],
+            "particles": ["src/plugins/particles.js"]
+        }
+    }
+}

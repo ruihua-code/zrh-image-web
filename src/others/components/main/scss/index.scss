@@ -1,0 +1,39 @@
+.componentmain-others {
+    @include size(100%, 100%);
+    overflow: hidden;
+
+    :global {
+        .left-nav {
+            @include size(200px, 100%);
+            border-right: 1px solid $gray-8;
+            background-color: $border-color-base;
+
+            overflow: auto;
+
+            li {
+                border-bottom: 1px solid $white;
+                height: 40px;
+                line-height: 40px;
+
+                > a {
+                    @include size(100%, 100%);
+                    display: inline-block;
+                    overflow: hidden;
+                    padding-left: 20px;
+                    text-decoration: none;
+                    color: $black;
+
+                    &.active {
+                        background-color: $gray-8;
+                        color: $main-color;
+                    }
+                }
+            }
+        }
+
+        .right-content {
+            @include size(calc(100% - 200px), 100%);
+            overflow: auto;
+        }
+    }
+}

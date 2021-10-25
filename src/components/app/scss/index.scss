@@ -1,0 +1,21 @@
+.chief {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    :global {
+        position: relative;
+        overflow: hidden;
+
+        .main-content {
+            width: 100%;
+            height: 100%;
+        }
+
+        // 第一个元素
+        .ant-menu-root > li:nth-child(1) {
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+    }
+}

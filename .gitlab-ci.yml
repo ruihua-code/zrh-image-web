@@ -1,0 +1,47 @@
+stages:
+  - bulid
+  - deploy
+
+variables:
+  PROJECTNAME: "example-ts"
+bulid:
+  stage: bulid
+# 执行Job内容
+  script:
+# 安装依赖
+    - npm i
+    - npm run build
+    - sudo rm -rf /home/mlamp/html/example-ts
+    - sudo cp -r dist /home/mlamp/html/example-ts
+    - tar -zcvf $PROJECTNAME-`date '+%Y-%m-%d_%H-%M-%S'`.tar.gz dist
+    - sudo mv $PROJECTNAME-*.tar.gz /home/mlamp/html/zips/
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - dist
+  tags:
+    - test
+  only:
+# 只有在该分支更新后才会执行
+    - test
+    - master
+
+# 安装依赖
+deploy:
+  stage: deploy
+  only:
+    - deploy
+  tags:
+    - deploy
+  script:
+    - npm i
+    - npm run build
+    - npm run build:docker
+  cache:
+    key: $CI_PROJECT_NAME-$CI_COMMIT_BRANCH-$CI_COMMIT_SHA-$CI_COMMIT_REF_NAME
+    untracked: true
+    paths:
+      - node_modules
+      - dist

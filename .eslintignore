@@ -1,0 +1,10 @@
+/build/
+/dist/
+/docs/
+/server/
+/*.js
+/*.ts
+/*.json
+iconfont.js
+ytt.config.ts
+request.ts

@@ -1,0 +1,15 @@
+.collapse-default-framework {
+    display: none;
+}
+
+.collapse-in-framework {
+    display: block;
+}
+
+.collapsing-framework {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s linear;
+    transition-property: height, visibility;
+}

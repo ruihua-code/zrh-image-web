@@ -1,0 +1,61 @@
+.graph-define-graph-content-header {
+    .top-box {
+        @include size(100%, 48px);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid $module-border-color;
+        border-radius: 4px 4px 0 0;
+        box-sizing: border-box;
+        background: $module-title-bg-color;
+        padding: 0 $space-lg;
+        line-height: 44px;
+        font-size: 16px;
+
+        .icon-btn {
+            margin-left: $space-md;
+            cursor: pointer;
+            color: $text-component-color;
+
+            &.disabled {
+                cursor: not-allowed;
+                color: $disabled-color;
+            }
+        }
+
+        .title-box {
+            line-height: 48px;
+
+            .icon-btn {
+                margin: 0 $space-md 0 0;
+            }
+
+            .top-search {
+                margin-top: $space-xs;
+                width: 260px;
+            }
+
+            .graph-delete-btn {
+                font-size: 18px;
+            }
+        }
+
+        .icon-operates {
+            border-right: 1px solid $module-border-color;
+
+            .sep-line {
+                display: inline-block;
+                position: relative;
+                top: 8px;
+                margin-right: $space-sm;
+                width: 1px;
+                height: 32px;
+            }
+        }
+
+        .btn-operates {
+            margin-left: $space-lg;
+        }
+    }
+}

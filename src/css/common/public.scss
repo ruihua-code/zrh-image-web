@@ -1,0 +1,223 @@
+@charset "utf-8";
+$font-family: 'siyuan', 'Microsoft YaHei', 'SimSun', 'Roboto-Regular', 'Helvetica Neue', helvetica, arial, sans-serif !important;
+
+//浏览器ie版本小于10提示框样式
+.browsehappy {
+    margin: 0.2em 0;
+    background: $gray-8;
+    padding: 0.2em 0;
+    color: $black;
+}
+
+html,
+body {
+    background-color: $white;
+    height: auto !important;
+    font-family: $font-family;
+    font-size: 14px;
+}
+
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.hide {
+    display: none !important;
+}
+
+.show {
+    display: block !important;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.text-hide {
+    border: 0;
+    background-color: transparent;
+    text-shadow: none;
+    color: transparent;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.affix {
+    position: fixed;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.clearfix::before,
+.clearfix::after {
+    display: table;
+    content: '';
+}
+
+.clearfix::after {
+    clear: both;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
+}
+
+.lead {
+    font-size: 21px;
+}
+
+.small,
+small {
+    font-size: 85%;
+}
+
+.mark,
+mark {
+    background-color: $white;
+    padding: 0.2em;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: $space-xs;
+}
+
+ol ol,
+ol ul,
+ul ol,
+ul ul {
+    margin-bottom: 0;
+}
+
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline {
+    margin-left: -5px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.list-inline > li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+dl {
+    margin-top: 0;
+    margin-bottom: $space-lg;
+}
+
+dd,
+dt {
+    line-height: 1.42857143;
+}
+
+dt {
+    font-weight: 700;
+}
+
+dd {
+    margin-left: 0;
+}
+
+#container {
+    @include size(100vw, 100vh);
+}
+
+/* 滚动条scrollbar */
+::-webkit-scrollbar {
+    width: $scrollbar-thumb-width;
+    height: $scrollbar-thumb-width;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-border-radius: $scrollbar-thumb-width;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: $scrollbar-thumb-width;
+    background: $scrollbar-thumb-color;
+}
+
+::-webkit-scrollbar-corner {
+    -webkit-box-shadow: none;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: $scrollbar-thumb-color;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    -webkit-border-radius: $scrollbar-thumb-width;
+    background-color: $scrollbar-thumb-color;
+}
+
+// react-ace默认隐藏显示竖线
+.ace_print-margin {
+    width: 0;
+}
+
+.ant-layout {
+    height: 100%;
+}

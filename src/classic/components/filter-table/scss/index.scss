@@ -1,0 +1,17 @@
+.demo-filter-table-classic {
+    height: 100%;
+
+    .filter-table-content {
+        height: 100%;
+        padding: 24px;
+
+        .filter-table-table {
+            margin-top: $space-lg;
+            height: calc(100% - 64px - 24px - 248px);
+        }
+
+        .oper-btns {
+            display: flex;
+        }
+    }
+}

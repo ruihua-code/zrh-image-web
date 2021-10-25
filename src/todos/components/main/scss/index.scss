@@ -1,0 +1,46 @@
+@charset "utf-8";
+
+.todo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    .todomain-todos {
+        @include size(550px);
+        position: relative;
+        margin: 0 auto;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+        background-color: $white;
+        text-align: center;
+
+        button {
+            margin: 0;
+            border: 0;
+            background: none;
+            padding: 0;
+            vertical-align: baseline;
+            color: inherit;
+            font-family: inherit;
+            font-size: 100%;
+            font-weight: inherit;
+            -webkit-appearance: none;
+        }
+
+        input,
+        button {
+            outline: none;
+
+            &:focus {
+                outline-width: 0;
+            }
+        }
+
+        h1 {
+            margin: 0.67em 0;
+            color: rgba(175, 47, 47, 0.15);
+            font-size: 100px;
+        }
+    }
+}
