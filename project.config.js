@@ -352,13 +352,13 @@ const mediaLoader = {
 };
 
 const injectionLoader = [
-    {
-        test: path.join(APP_PATH, 'framework/project-init.tsx'),
-        loader: 'imports-loader',
+	{
+		test: path.join(APP_PATH, 'framework/project-init.tsx'),
+		loader: 'imports-loader',
 		options: {
 			additionalCode: `window.basename = '${publicPath}'`
 		}
-    }
+	}
 ]
 
 const optimization = {
@@ -530,16 +530,10 @@ if (isProd) {
 
 const proxies = [
 	{
-		target: 'http://localhost',
-		proxyPort: 3003,
+		target: 'https://ruihua.video',
+		// proxyPort: 3003,
 		headers: {},
-		paths: ['/api']
-	},
-	{
-		target: 'http://yapi.po.mlamp.cn',
-		proxyPort: 80,
-		headers: {},
-		paths: ['/mock/20']
+		paths: ['/']
 	}
 ];
 

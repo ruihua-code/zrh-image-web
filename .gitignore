@@ -25,3 +25,5 @@ yarn-error.log*
 mre-cache/*
 !mre-cache/@mlamp*
 
+yarn-offline-cache
+yarn-offline-cache/

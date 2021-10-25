@@ -1,0 +1,17 @@
+.container {
+    margin: 12px;
+    height: calc(100vh - 64px - 24px);
+    overflow: auto;
+
+    :global {
+        .ant-row {
+            margin-bottom: 12px;
+            width: 100%
+        }
+
+        .col-item {
+            margin: 0;
+            padding: 12px;
+        }
+    }
+}

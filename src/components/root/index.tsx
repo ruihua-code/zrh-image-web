@@ -13,6 +13,7 @@ import Dialog from 'framework/dialog/container';
 import Loading from 'loading/container';
 import LanguageSelect from '../language-select/index';
 import localsRes from '../../locales/loader';
+import LoginPage from '@/views/login';
 
 // todo 更优雅的调用dayjs的国际化文件
 // by mizi 2021.0104
@@ -76,13 +77,16 @@ const RootRoutesView = function () {
                 <>
                     <Switch>
                         <Route path={url.root} exact render={() => <Redirect to={url.login.path} />} />
-                        <Route path={url.login.path} component={lazyload(import('@/login/container'))} />
+                        {/* <Route path={url.login.path} component={lazyload(import('@/login/container'))} /> */}
+                        <Route path={url.login.path} component={LoginPage} />
+                        <Route path={url.about.path} component={lazyload(import('@/views/registry'))} />
                         <Route
                             path={url.permission.path}
                             component={lazyload(import('@/components/permission-denied'))}
                         />
                         <Route path={url.serverError.path} component={lazyload(import('@/components/server-error'))} />
                         <Route path={url.app.root.path} component={MainAppView} />
+
                         <Route component={NotFindView} />
                     </Switch>
                     <Provider store={storeCommon}>

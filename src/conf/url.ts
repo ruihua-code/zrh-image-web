@@ -4,6 +4,10 @@ const url = {
         path: '/login',
         title: '登录页'
     },
+    about: {
+        path: '/registry',
+        title: '注册页'
+    },
     permission: {
         path: '/permission-denied',
         title: '无权访问'
